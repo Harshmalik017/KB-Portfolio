@@ -1,5 +1,6 @@
 // Smoke test: starts `next start` and checks every route. Run after `npm run build`.
 import { spawn } from "node:child_process";
+import { fileURLToPath } from "node:url";
 const port = 3111,
   base = `http://localhost:${port}`;
 const checks = [
@@ -14,7 +15,8 @@ const checks = [
   ["/opengraph-image", 200, ""],
   ["/nope", 404, ""],
 ];
-const srv = spawn("npx", ["next", "start", "-p", String(port)], { stdio: "ignore" });
+const nextBin = fileURLToPath(new URL("../node_modules/next/dist/bin/next", import.meta.url));
+const srv = spawn(process.execPath, [nextBin, "start", "-p", String(port)], { stdio: "ignore" });
 const wait = async () => {
   for (let i = 0; i < 40; i++) {
     try {
