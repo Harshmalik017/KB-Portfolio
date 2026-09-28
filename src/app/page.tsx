@@ -27,7 +27,7 @@ export default function Home() {
     { label: "Publications", value: String(publications.length) },
     { label: "Conference papers", value: String(conferences.length) },
   ];
-  const photo = hasPublicFile("profile.jpg");
+  const photo = hasPublicFile("kaushik-b.png");
   const cv = hasPublicFile("CV.pdf");
   const current = experience.find((e) => e.current);
   return (
@@ -35,16 +35,16 @@ export default function Home() {
       <GlassCard className="py-10 text-center sm:py-16">
         {photo ? (
           <Image
-            src="/profile.jpg"
+            src="/kaushik-b.png"
             alt={profile.name}
-            width={112}
-            height={112}
+            width={192}
+            height={192}
             priority
-            className="mx-auto mb-5 h-28 w-28 rounded-full border-4 border-white/60 object-cover shadow-lg"
+            className="mx-auto mb-5 h-48 w-48 rounded-full border-4 border-white/60 object-cover shadow-lg"
           />
         ) : (
           <div
-            className="mx-auto mb-5 grid h-24 w-24 place-items-center rounded-full bg-brand-600 text-3xl font-bold text-white shadow-lg"
+            className="mx-auto mb-5 grid h-48 w-48 place-items-center rounded-full bg-brand-600 text-3xl font-bold text-white shadow-lg"
             aria-hidden
           >
             KB
