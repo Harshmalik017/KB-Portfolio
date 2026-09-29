@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mic, Presentation } from "lucide-react";
 import PageHeading from "@/components/PageHeading";
 import GlassCard from "@/components/GlassCard";
@@ -12,6 +13,16 @@ const Group = ({ title, icon: Icon, items }: { title: string; icon: typeof Mic; 
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((i) => (
         <GlassCard key={i.title} interactive>
+          {i.image && (
+            <Image
+              src={i.image}
+              alt={i.title}
+              width={900}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="mb-4 aspect-video w-full rounded-xl object-cover"
+            />
+          )}
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-semibold text-brand-600 dark:text-brand-300">{i.when}</p>
             {i.status && <Badge tone={i.status === "Presented" ? "green" : "brand"}>{i.status}</Badge>}

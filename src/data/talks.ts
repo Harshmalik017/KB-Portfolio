@@ -1,19 +1,28 @@
-export type TalkItem = { title: string; where: string; when: string; status?: "Presented" | "Accepted" };
+export type TalkItem = {
+  title: string;
+  where: string;
+  when: string;
+  image?: string;
+  status?: "Presented" | "Accepted";
+};
 export const lectures: TalkItem[] = [
   {
     title: "Child Rights and Women Empowerment in India: Concepts and Practice",
     where: "Lady Irwin College, Delhi University (undergraduate students)",
     when: "11 Mar 2024",
+    image: "/research-child-rights.png",
   },
   {
     title: "Decentralised Public Finance in Indian Federalism",
     where: "Moolya Foundation (online lecture)",
     when: "16 Jan 2020",
+    image: "/research-decentralised-public-finance.png",
   },
   {
     title: "Public Finance in Indian Federalism: Theory and Practice",
     where: "Jagannath Institute of Management Sciences",
     when: "6 Feb 2019",
+    image: "/research-public-finance-federalism.png",
   },
 ];
 export const conferences: TalkItem[] = [
@@ -22,6 +31,7 @@ export const conferences: TalkItem[] = [
     where:
       "National Conference on 25 Years of Economic Reforms in India: Performance and Prospects, Tumkur University, Karnataka",
     when: "22 Apr 2017",
+    image: "/research-intergovernmental-transfers.png",
     status: "Presented",
   },
   {
@@ -29,18 +39,21 @@ export const conferences: TalkItem[] = [
     where:
       "12th International Symposium on Econometric Theory and Applications & 26th NZ Econometric Study Group (SETA/NZESG), University of Waikato, Hamilton, New Zealand",
     when: "17–19 Feb 2016",
+    image: "/research-flypaper-effect.png",
     status: "Accepted",
   },
   {
     title: "Inequality Effects of Fiscal Policy: Analysing the Benefit Incidence on Health Sector, India",
     where: "71st International Institute of Public Finance (IIPF) Annual Congress, Dublin, Ireland",
     when: "20–23 Aug 2015",
+    image: "/research-health-finance-equity.png",
     status: "Presented",
   },
   {
     title: "Issues and Evidence in Ensuring Early Childhood Care and Development: Intergenerational India",
     where: "14th Annual Conference of Pacific Early Childhood Education Research Association (PECERA), Seoul, Korea",
     when: "4–6 Jul 2013",
+    image: "/research-early-childhood.png",
     status: "Accepted",
   },
 ];
