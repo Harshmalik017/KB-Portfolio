@@ -26,7 +26,10 @@ const areaImages = [
     { src: "/research-decentralised-public-finance.png", alt: "Public finance and decentralisation across India" },
     { src: "/research-public-finance-federalism.png", alt: "Public finance policy in Indian federalism" },
   ],
-  [{ src: "/research-intergovernmental-transfers.png", alt: "Fiscal transfers between levels of government in India" }],
+  [
+    { src: "/research-intergovernmental-transfers.png", alt: "Fiscal transfers between levels of government in India" },
+    { src: "/research-flypaper-effect.png", alt: "How intergovernmental transfers shape local spending in India" },
+  ],
   [
     { src: "/research-child-rights.png", alt: "Child rights and women's empowerment" },
     { src: "/research-health-finance-equity.png", alt: "Equity in public healthcare financing" },
