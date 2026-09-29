@@ -21,6 +21,19 @@ import { conferences } from "@/data/talks";
 import { experience } from "@/data/experience";
 import { hasPublicFile } from "@/lib/assets";
 const areaIcons = [Landmark, Network, Building2, Brain];
+const areaImages = [
+  [
+    { src: "/research-decentralised-public-finance.png", alt: "Public finance and decentralisation across India" },
+    { src: "/research-public-finance-federalism.png", alt: "Public finance policy in Indian federalism" },
+  ],
+  [{ src: "/research-intergovernmental-transfers.png", alt: "Fiscal transfers between levels of government in India" }],
+  [
+    { src: "/research-child-rights.png", alt: "Child rights and women's empowerment" },
+    { src: "/research-health-finance-equity.png", alt: "Equity in public healthcare financing" },
+    { src: "/research-early-childhood.png", alt: "Early childhood development and care" },
+  ],
+  [],
+];
 export default function Home() {
   const stats = [
     { label: "Years of experience", value: profile.yearsExperience },
@@ -112,6 +125,25 @@ export default function Home() {
                 interactive
                 className="!border-brand-500 !bg-brand-600 text-white"
               >
+                {areaImages[i].length > 0 && (
+                  <div
+                    className={`mb-4 grid h-28 gap-2 overflow-hidden rounded-xl ${
+                      areaImages[i].length === 1 ? "grid-cols-1" : areaImages[i].length === 2 ? "grid-cols-2" : "grid-cols-3"
+                    }`}
+                  >
+                    {areaImages[i].map((image) => (
+                      <Image
+                        key={image.src}
+                        src={image.src}
+                        alt={image.alt}
+                        width={900}
+                        height={400}
+                        sizes="(max-width: 640px) 70vw, 240px"
+                        className="h-full w-full rounded-lg object-cover"
+                      />
+                    ))}
+                  </div>
+                )}
                 <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-white text-brand-700 shadow-sm">
                   <Icon size={20} />
                 </span>
