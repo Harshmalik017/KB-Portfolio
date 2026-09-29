@@ -1,4 +1,4 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, ClipboardList } from "lucide-react";
 import PageHeading from "@/components/PageHeading";
 import TimelineItem from "@/components/TimelineItem";
 import GlassCard from "@/components/GlassCard";
@@ -13,7 +13,10 @@ export default function Experience() {
           <TimelineItem key={j.role + j.period} job={j} />
         ))}
       </div>
-      <h2 className="mb-4 mt-12 text-xl font-semibold">Short-term research consultancy</h2>
+      <h2 className="mb-4 mt-12 flex items-center gap-2 text-xl font-semibold">
+        <ClipboardList size={20} aria-hidden />
+        Short-term research consultancy
+      </h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {consultancies.map((c) => (
           <GlassCard key={c.org} interactive>

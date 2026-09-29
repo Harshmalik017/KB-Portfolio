@@ -1,4 +1,4 @@
-import { Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { Linkedin, Mail, MapPin, MessageSquare, Send } from "lucide-react";
 import PageHeading from "@/components/PageHeading";
 import GlassCard from "@/components/GlassCard";
 import CopyEmail from "@/components/CopyEmail";
@@ -44,7 +44,10 @@ export default function Contact() {
         ))}
       </div>
       <GlassCard className="mt-6">
-        <h2 className="mb-4 text-xl font-semibold">Send a message</h2>
+        <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold">
+          <MessageSquare size={20} aria-hidden />
+          Send a message
+        </h2>
         <ContactForm email={profile.email} />
       </GlassCard>
     </>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   ArrowRight,
   Brain,
+  BookOpen,
   Building2,
   Download,
   FileX,
@@ -98,19 +99,24 @@ export default function Home() {
       )}
 
       <section aria-labelledby="areas">
-        <h2 id="areas" className="mb-4 text-xl font-semibold">
+        <h2 id="areas" className="mb-4 flex items-center gap-2 text-xl font-semibold">
+          <Landmark size={20} aria-hidden />
           Research areas
         </h2>
         <Carousel label="Research areas" itemClass="w-[80%] sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]">
           {profile.researchAreas.map((a, i) => {
             const Icon = areaIcons[i];
             return (
-              <GlassCard key={a.title} interactive>
-                <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-white">
+              <GlassCard
+                key={a.title}
+                interactive
+                className="!border-brand-500 !bg-brand-600 text-white"
+              >
+                <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-white text-brand-700 shadow-sm">
                   <Icon size={20} />
                 </span>
                 <h3 className="font-semibold">{a.title}</h3>
-                <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{a.text}</p>
+                <p className="mt-1 text-sm text-white/85">{a.text}</p>
               </GlassCard>
             );
           })}
@@ -119,7 +125,8 @@ export default function Home() {
 
       <section aria-labelledby="latest">
         <div className="mb-4 flex items-center justify-between gap-3">
-          <h2 id="latest" className="text-xl font-semibold">
+          <h2 id="latest" className="flex items-center gap-2 text-xl font-semibold">
+            <BookOpen size={20} aria-hidden />
             Latest publications
           </h2>
           <Button href="/publications" variant="secondary" size="sm">
@@ -143,7 +150,7 @@ export default function Home() {
       <div className="grid gap-6 lg:grid-cols-2">
         <GlassCard>
           <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold">
-            <GraduationCap size={20} /> Education
+            <GraduationCap size={20} aria-hidden /> Education
           </h2>
           <ul className="space-y-4">
             {profile.education.map((e) => (
@@ -158,7 +165,7 @@ export default function Home() {
         </GlassCard>
         <GlassCard>
           <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold">
-            <Sparkles size={20} /> Expertise
+            <Sparkles size={20} aria-hidden /> Expertise
           </h2>
           <div className="flex flex-wrap gap-2">
             {profile.skills.map((s) => (

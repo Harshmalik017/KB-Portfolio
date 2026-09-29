@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { ExternalLink, Search, SearchX } from "lucide-react";
+import { CalendarDays, ExternalLink, FileText, Search, SearchX } from "lucide-react";
 import GlassCard from "./GlassCard";
 import Badge from "./Badge";
 import Button from "./Button";
@@ -80,7 +80,10 @@ export default function PublicationList() {
       {list.map((p, i) => (
         <div key={p.title}>
           {(i === 0 || groupKey(list[i - 1]) !== groupKey(p)) && (
-            <h2 className="mb-3 mt-6 text-lg font-bold text-brand-700 dark:text-brand-300">{groupKey(p)}</h2>
+            <h2 className="mb-3 mt-6 flex items-center gap-2 text-lg font-bold text-brand-700 dark:text-brand-300">
+              {sort === "type" ? <FileText size={18} aria-hidden /> : <CalendarDays size={18} aria-hidden />}
+              {groupKey(p)}
+            </h2>
           )}
           <GlassCard as="article" interactive className="mb-3 flex flex-col gap-2">
             <div className="flex items-center justify-between">
